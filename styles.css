@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HHDM9k1Q-j3x8jx1u/videoblocks-retro-fever-dance-floor-pt-06_b5x8q8fmm_thumbnail-full01.png");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +24,16 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.BlueDancer{
+  content: url('http://dl.glitter-graphics.com/pub/843/843091wg9t5qi2wn.gif');
+/*  border:30px solid blue;
+  border-radius:100px;*/
+  position:absolute;
+}
+
+.methodButton{
+  padding:5px 12px;
+  float:center;
 }

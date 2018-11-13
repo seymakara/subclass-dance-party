@@ -1,6 +1,10 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  $('body').on('click', '.BlueDancer', function(event) {
+    $(this).toggleClass('BlueDancer');
+  })
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -16,7 +20,7 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
+    console.log("this on click", $(this).data('dancer-maker-function-name'))
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
@@ -28,6 +32,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+  });
+
+  $(".lineUpButton").on("click", function(event){
+    var gap = ($(window).height()) / window.dancers.length
+    // Iterates through each dancer in the global "dancers" array
+    window.dancers.forEach(function(dancer){
+      // Calls the lineUp method for each dancer
+      
+      dancer.lineUp();
+    });
   });
 });
 
