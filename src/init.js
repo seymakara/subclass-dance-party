@@ -20,7 +20,6 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-    console.log("this on click", $(this).data('dancer-maker-function-name'))
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
@@ -47,12 +46,13 @@ $(document).ready(function() {
     var counterBlueDancer = 0;
     var counterRudolphDancer = 0;
     var counterBlinkyDancer = 0;
+    // var counterJingleDancer = 0;
     
     for (var i = 0; i < window.dancers.length; i++) {
 
       if (window.dancers[i] instanceof BlueDancer) {
         distance = gap * counterBlueDancer;
-        top = 100;
+        top = 700;
         counterBlueDancer++
         
       } else if (window.dancers[i] instanceof makeBlinkyDancer) {
@@ -61,9 +61,13 @@ $(document).ready(function() {
         counterBlinkyDancer++
       } else if (window.dancers[i] instanceof RudolphDancer) {
         distance = gap * counterRudolphDancer;
-        top = 300;
+        top = 100;
         counterRudolphDancer++
       }
+      //  else if (window.dancers[i] instanceof JingleDancer) {
+      //   distance = gap * counterJingleDancer;
+      //   top = 800;
+      // }
 
       window.dancers[i].lineUp(top, distance)
             
