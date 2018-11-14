@@ -33,14 +33,18 @@ makeDancer.prototype.setPosition = function(top, left){
   this.$node.css(styleSettings);
 }
 
-makeDancer.prototype.lineUp = function(){
+makeDancer.prototype.lineUp = function(top, left){
   console.log($(window).height());
   
-  var gap = ($(window).height()) / window.dancers.length
-
   var styleSettings = {
-    top: 200,
+    top: top,
+    left: left,
   };
   this.$node.css(styleSettings);
   
 }
+
+makeDancer.prototype.breakLine = function() {
+  // Call setPosition with random X and Y coordinates
+  this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
+};

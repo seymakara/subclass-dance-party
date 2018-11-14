@@ -28,12 +28,22 @@ body, a:link, a:visited, a:active{
 
 .BlueDancer{
   content: url('http://dl.glitter-graphics.com/pub/843/843091wg9t5qi2wn.gif');
-/*  border:30px solid blue;
-  border-radius:100px;*/
   position:absolute;
 }
 
 .methodButton{
   padding:5px 12px;
   float:center;
+}
+
+.RudolphDancer{
+  content: url('img/rudolph.png');
+  transition: transform .8s;
+  position:absolute;
+}
+
+.RudolphDancer:hover{
+  /*transform: scale(1.5);*/
+  transform: rotate(360deg);
+  transform-origin: bottom left;
 }

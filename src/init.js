@@ -38,11 +38,44 @@ $(document).ready(function() {
   $(".lineUpButton").on("click", function(event){
     var gap = ($(window).height()) / window.dancers.length
     // Iterates through each dancer in the global "dancers" array
-    window.dancers.forEach(function(dancer){
-      // Calls the lineUp method for each dancer
+    // window.dancers.forEach(function(dancer){
+    //   // Calls the lineUp method for each dancer
       
-      dancer.lineUp();
+    var top;
+    var distance;
+    var counterBlueDancer = 0;
+    var counterRudolphDancer = 0;
+    var counterBlinkyDancer = 0;
+    
+    for (var i = 0; i < window.dancers.length; i++) {
+
+      if (window.dancers[i] instanceof BlueDancer) {
+        distance = gap * counterBlueDancer;
+        top = 100;
+        counterBlueDancer++
+        
+      } else if (window.dancers[i] instanceof makeBlinkyDancer) {
+        distance = gap * counterBlinkyDancer;
+        top = 500;
+        counterBlinkyDancer++
+      } else if (window.dancers[i] instanceof RudolphDancer) {
+        distance = gap * counterRudolphDancer;
+        top = 300;
+        counterRudolphDancer++
+      }
+
+      window.dancers[i].lineUp(top, distance)
+            
+    }
+    
+  });
+  
+  $('.breakLineButton').on('click', function() {
+    window.dancers.forEach(function(dancer) {
+      // Calls the breakLine method for each dancer
+      dancer.breakLine();
     });
   });
+
 });
 
